@@ -13,3 +13,5 @@ Installation and Execution
 4.To open cypress UI to run tests, in terminal standing in src folder, run "npm run cypress-ui".
 
 5.In Cypress UI click "Run 2 integration specs"
+
+Note: In the contact form test there is a 20 sec window included in case the captch challenge is an image one, which has to be solved manually.
