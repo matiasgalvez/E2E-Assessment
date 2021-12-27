@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "cypress": "^9.2.0",
+    "cypress-xpath": "^1.6.2"
+  },
+  "scripts": {
+    "cypress-ui": "cls && npx cypress open",
+    "tests-byconsole": "cls && npx cypress run --browser chrome --headless --spec \"./cypress/integration/assessment-tests/*.spec.js\""
+  }
+}
