@@ -24,6 +24,6 @@ context('Tudip web test cases', () => {
 		//so I include a 20 sec window to solve the captcha, after doing so the test will continue.
 		cy.wait(20000);
 		cy.xpath('//*[@id="form-submit"]').click();
-		cy.contains('Thank you for your message. It has been sent.').should('be.visible');
+		cy.url().should('eq', 'https://tudip.com/contact/#wpcf7-f5679-p5675-o2');
 	});
 });
