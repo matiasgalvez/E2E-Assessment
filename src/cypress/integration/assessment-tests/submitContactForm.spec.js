@@ -19,11 +19,11 @@ context('Tudip web test cases', () => {
 		cy.xpath('//*[@name="your-subject"]').type('Contact form automated test');
 		cy.xpath('//*[@name="your-message"]').type('Test message for automated test');
 		cy.clickRecaptcha();
-		//Here the web page gives an image captcha to solve, which can't be automated 
+		//Here the web page sometimes gives an image captcha to solve, which can't be automated 
 		//without creating a test environment only captcha or disabling it in test environments,
-		//so I include a 20 sec window to solve the captcha, after doing so the test will continue.
+		//so I include a 20 sec window to solve the captcha if its an image one, after doing so the test will continue.
 		cy.wait(20000);
 		cy.xpath('//*[@id="form-submit"]').click();
-		cy.url().should('eq', 'https://tudip.com/contact/#wpcf7-f5679-p5675-o2');
+		cy.contains('Thank you for your message. It has been sent.').should('be.visible');
 	});
 });
